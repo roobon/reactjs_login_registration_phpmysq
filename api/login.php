@@ -8,7 +8,7 @@ $data =  json_decode($data);
 $email = $data->email;
 $password = $data->password;
 
-$result = mysqli_query($db_conn, "SELECT * FROM users WHERE email='$email' AND password='$password'");
+$result = mysqli_query($db_conn, "SELECT * FROM registration WHERE email='$email' AND password='$password'");
 
 if (mysqli_num_rows($result) > 0) {
     //echo "Yes";

@@ -4,22 +4,31 @@ import { useNavigate } from "react-router-dom";
 
 export default function Register() {
   const navigate = useNavigate();
-  const [info, setInfo] = useState({});
+  const [info, setInfo] = useState({
+    fname: "",
+    lname: "",
+    email: "",
+    password: "",
+  });
 
   const changeValue = (e) => {
     setInfo({ ...info, [e.target.name]: e.target.value });
   };
   const formSubmit = (e) => {
     e.preventDefault();
+    console.log(info);
     axios
-      .post("http://localhost/reactloginregister/api/registration.php", info)
+      .post(
+        "http://localhost/reactjs_login_registration_phpmysql/api/register.php",
+        info
+      )
       .then((res) => {
         if (res.data) {
-          console.log("Yes");
+          console.log(res.data);
         }
       });
   };
-  console.log(info);
+
   return (
     <div className="container">
       <div className="row">

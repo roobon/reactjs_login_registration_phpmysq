@@ -14,13 +14,16 @@ export default function Login() {
     e.preventDefault();
     //console.log(user);
     axios
-      .post("http://localhost/reactloginregister/api/login.php", user)
+      .post(
+        "http://localhost/reactjs_login_registration_phpmysql/api/login.php",
+        user
+      )
       .then((res) => {
         //console.log(res.data);
         if (res.data.status === 200) {
           //console.log("Need to set session");
           localStorage.setItem("email", res.data.email);
-          localStorage.setItem("fullname", res.data.name);
+          localStorage.setItem("fullname", res.data.fname);
           navigate("/dashboard");
         } else {
           alert("Try with correct password");
