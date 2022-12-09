@@ -1,1 +1,1 @@
-# reactjs_login_registration_phpmysq
+# reactjs_login_registration_phpmysql
