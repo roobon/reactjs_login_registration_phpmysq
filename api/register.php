@@ -19,11 +19,11 @@ if (($data->fname) && ($data->fname != '')) {
 
 
     if (mysqli_num_rows($result) > 0) {
-        echo json_encode("Try Your Different Email Address");
+        echo json_encode("Try with different Email Address");
     } else {
         $resultInsert = mysqli_query($db_conn, "INSERT INTO registration (fname, lname, email, password) VALUES ('$fname','$lname','$email','$password')");
 
-        echo json_encode("Registration Complete.");
+        echo json_encode("Registration Completed.");
     }
 } else {
     echo json_encode("All Field must be filled");
