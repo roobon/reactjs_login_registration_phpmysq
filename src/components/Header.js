@@ -13,7 +13,6 @@ export default function Header() {
   //   setAuth(a);
   //   setFullName(f);
   // }, []);
-  const signin = false;
 
   const logOut = () => {
     localStorage.clear();
@@ -55,20 +54,26 @@ export default function Header() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" aria-current="page" to="/login">
-                Login
-              </Link>
-            </li>
-            <li className="nav-item">
               <Link className="nav-link" aria-current="page" to="/dashboard">
                 Dashboard
               </Link>
             </li>
           </ul>
-          <span className="navbar-text">{fullName}</span>{" "}
-          <a className="nav-link" aria-current="page" href="" onClick={logOut}>
-            Logout
-          </a>
+          <span className="navbar-text">{fullName}</span>
+          {fullName ? (
+            <a
+              className="nav-link"
+              aria-current="page"
+              href=""
+              onClick={logOut}
+            >
+              Logout
+            </a>
+          ) : (
+            <a className="nav-link" aria-current="page" href="/login">
+              Login
+            </a>
+          )}
         </div>
       </div>
     </nav>
