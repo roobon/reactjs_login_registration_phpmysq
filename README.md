@@ -1,3 +1,7 @@
+
+create a database: reactjs_login_registration_phpmysql this file from DatabaseFile folder
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
